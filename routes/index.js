@@ -35,6 +35,46 @@ router.get('/', (req, res, next) => {
     }
 });
 
+router.get('/:id', (req, res, next) => {
+    res.json({
+        status: 'success',
+        message: `GETTING message with ID ${req.params.id}`,
+        data: {
+            message: {
+                user: "John",
+                message: "Hello"
+            }
+        }
+    });
+});
+
+
+router.post('/', (req, res, next) => {
+    res.json({
+        status: 'success',
+        message: 'POSTING a new message for user Pikachu',
+        data: {
+            message: {
+                user: "John",
+                message: "Hello"
+            }
+        }
+    });
+});
+
+router.put('/:id', (req, res, next) => {
+    res.json({
+        status: 'success',
+        message: `UPDATING a message with id ${req.params.id}`,
+        data: {
+            message: {
+                user: "John",
+                message: "Hello"
+            }
+        }
+    });
+});
+
 
 
 module.exports = router;
