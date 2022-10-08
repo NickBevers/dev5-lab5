@@ -75,6 +75,17 @@ router.put('/:id', (req, res, next) => {
     });
 });
 
-
+router.delete('/:id', (req, res, next) => {
+    res.json({
+        status: 'success',
+        message: `DELETING a message with id ${req.params.id}`,
+        data: {
+            message: {
+                user: "John",
+                message: "Hello"
+            }
+        }
+    });
+});
 
 module.exports = router;
