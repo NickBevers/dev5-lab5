@@ -9,7 +9,13 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "/",
+            "headers": {
+                "Cache-Control": "s-maxage=1, stale-while-revalidate",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+                "Access-Control-Allow-Headers": "Authorization, Content-Type"
+            }
         }
     ]
 }
